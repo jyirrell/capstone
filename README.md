@@ -5,12 +5,14 @@ Combining the topics of health and air quality was as a result of personal inter
 
 PLEASE NOTE: Since this project was part of an course, it is something that is being regularly revisited, adapted and extended (for more information on this, please see the limitations and future work sections),
 
-Background
+#Background
+
 Air quality is linked to numerous acute and chronic conditions and according to the World Health Organisation accounts for approximately 7 million preventable deaths each year, with around 89% of these occurring in low- and middle-income countries.  The primary air pollutants are all linked to human activity and an ever increasing global population is only likely to reduce air quality.
 While the links between air pollutants and the effects on health are well documented and accepted, these are mostly due to diagnoses after the fact.  Similarly, health services work on treatment and cure after the damage has been done.  Is there a way of detecting or predicting health concerns before they become a chronic or life affecting illness?
 Parkrun organise 5km runs on a weekly basis across more than 700 different locations throughout the UK.  It’s entirely free and open to all demographics aged 10+.  This can be used as a metric for cardiovascular health, with a lower 5km time indicating a better level of health.
 
-Goals of the project
+#Goals of the project
+
 To use the coefficients or feature importances of certain models as a basis for the relationship between variables and health.
 To use air quality as a factor in predicting the running times for a 5km run.
 
