@@ -4,7 +4,7 @@ This project was completed as the final and capstone project of my Data Science 
 Combining the topics of health and air quality was as a result of personal interests in both the health and environment fields.
 
 PLEASE NOTE: Since this project was part of an course, it is something that is being regularly revisited, adapted and extended (for more information on this, please see the limitations and future work sections).
-Also, the CSVs have yet to be uploaded due to their size being too big for my github repo
+The full CSV of the scraped data and that of the larger data frame have yet to be uploaded since they are too large for the repo.  Instead, a sample that was created for the machine learning (see modelling section) has been included
 
 ## Background
 
@@ -18,21 +18,25 @@ To use the coefficients or feature importances of certain models as a basis for 
 To use air quality as a factor in predicting the running times for a 5km run.
 
 ## Data Collection
+
 The majority of data was scraped directly from the parkrun website.  The results of every event including the runner’s name, age group (a combination of their gender and the age range into which they fall) and running time are recorded on a unique page for each week at each location.
 The Department for Environment, Food and Rural Affairs (DEFRA) has more than 1500 air monitoring sites across the UK, measuring and collecting hourly data on 8 different air pollutants - Carbon Monoxide, Nitric Oxide, Nitrogen Dioxide, Ozone, Silicon Dioxide, Ammonia and two sizes of Particulate Matter.  These records were accessed using the OpenWeather API.
 
 ## Data Cleaning & Wrangling
+
 Scraping of the parkrun website was significant, iterating through almost 40,000 pages using Selenium.  As such, it was carried out in 10 iterations, each saving a separate CSV.  Each of these files had to be imported and cleaned before they could be concatenated together to give a full dataframe of all runs completed at parkrun events in 2022 (due to the time restrictions on data collection and EDA, the scope of the data was limited to 2022).  
 The original air quality dataframe contained hourly readings for every day of the year and each location.  This was filtered down to include only readings taken on Saturdays at 9am (since this is the time of the runs) by accessing the day of the week and hour from the timestamp of each measurement.  These two dataframes were merged, dropping any duplicate values as well as any runs which had no air quality data applicable.   
 This created a dataset with over 4.3 million observations and 20 variables.
 
 ## Feature Engineering
+
 The following features were engineered before and after data cleaning:
 Age of the runner - as the median value of the age range
 Gender of the runner - binarised to “is_male”
 Latitude and Longitude of the parkrun location using Nominatim
 
 ## EDA
+
 Parkruns - age and gender distrubtions
 EDA showed that the majority of the observations were for men, with almost 60 % of the runners being male and on average male runners recording faster times than female runners.  Since the mean time for male runners was 27.2 minutes and 32.8 for female runners, it suggests that gender may have an effect on running time.
 
@@ -51,11 +55,13 @@ When looking at the variation for each pollutant across the year (measured by ta
 
 
 ## Relationships
+
 The final stage of the EDA was to look for any correlation between the variables in the dataset.  The below heatmap shows the Pearson correlation for all of the variables and suggests that many of the pollutants may have collinearity - particulate matter of 2.5 um and 10um have a strong collinearity as do silicon dioxide and nitrogen dioxide.
 However, all seem to have a Pearson correlation coefficient of 0 with time.  Indeed, the only variables that have any significant correlation with time are is_male (gender) and med_age.
 
 
 ## Modelling
+
 Due to the size of the original dataframe, a sample of 1% (approx 43,000 observations) was created for the modelling stage.  The data was initially modelled on a training set from the sample using 3 different models:
 Linear Regressor
 Decision Tree Regressor
