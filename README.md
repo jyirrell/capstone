@@ -3,7 +3,8 @@ Overview
 This project was completed as the final and capstone project of my Data Science Immersive course with General Assembly.
 Combining the topics of health and air quality was as a result of personal interests in both the health and environment fields.
 
-PLEASE NOTE: Since this project was part of an course, it is something that is being regularly revisited, adapted and extended (for more information on this, please see the limitations and future work sections),
+PLEASE NOTE: Since this project was part of an course, it is something that is being regularly revisited, adapted and extended (for more information on this, please see the limitations and future work sections).
+Also, the CSVs have yet to be uploaded due to their size being too big for my github repo
 
 ## Background
 
