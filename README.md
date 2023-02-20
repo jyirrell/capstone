@@ -42,12 +42,16 @@ EDA showed that the majority of the observations were for men, with almost 60 % 
 
 ![alt text](https://github.com/jyirrell/capstone/blob/main/gender_dist.png)
 
+![alt text](https://github.com/jyirrell/capstone/blob/main/time_dist_gender.png)
+
 The spread of ages ranged from 10 years old to runners in their 90s so the age range of the dataset is quite considerable.  Indeed, there were over 280 runs completed by 20 different people, while almost 24,000 10 year olds took part.  Age seemed to have a bearing on running time, with 16-20 years olds having the best average running times and an obvious pattern of the average time increasing with age.  The exception to this being the age ranges that included 10-14 years, which were slower than the other teenagers.  This is hardly surprising as their bodies are still developing in strength, fitness and even height (giving a greater stride length and running efficiency).
 
+![alt text](https://github.com/jyirrell/capstone/blob/main/time_dist_age.png)
 
 ## Air pollutants
 The air pollutant data showed some interesting trends.  As expected, higher levels of air pollutant were measured around larger cities and higher density residential areas.  For example, the highest levels of particulate matter (shown in the heatmap below) were from Greater London, followed by Manchester and Merseyside, with lower levels around the coasts and into North West Scotland.  However, when compared with the fastest and slowest parkrun locations, there was little correlation between these variables.
 
+![alt text](https://github.com/jyirrell/capstone/blob/main/pm_heatmap.png)
 
 When looking at the variation for each pollutant across the year (measured by taking the mean value for the entire UK), it’s possible to see quite drastic changes in levels across different seasons.  For example, Carbon Monoxide, Nitrogen Dioxide and Ammonia all show annual lows around July.  While the highest concentrations for Carbon Monoxide, Sulphur Dioxide and Nitrogen Dioxide all occur at the beginning of the year - around the same time that the lowest measurement of Ozone occurs.
 
@@ -70,6 +74,8 @@ Decision Tree Regressor
 Random Forest Regressor
 
 While there were other models that could have been utilised, these 3 were prioritised because the initial goal was to use the models to understand or explain the relationship between the air quality and running times.  This information can be gained by looking at the coefficients from  Linear Regressor models and the feature importances of the Decision Tree and Random Forest regressors, as shown below.
+
+![alt text](https://github.com/jyirrell/capstone/blob/main/linreg_coeffs-2.png)
 
 ![alt text](https://github.com/jyirrell/capstone/blob/main/feature_importances.png)
 
