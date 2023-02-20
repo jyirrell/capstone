@@ -3,14 +3,14 @@ Overview
 This project was completed as the final and capstone project of my Data Science Immersive course with General Assembly.
 Combining the topics of health and air quality was as a result of personal interests in both the health and environment fields.
 
-PLEASE NOTE: Since this project was part of an course, it is something that is being regularly revisited, adapted and extended (for more information on this, please see the limitations and future work sections).
+PLEASE NOTE: Since this project was part of a course, it is something that is being regularly revisited, adapted and extended (for more information on this, please see the limitations and future work sections).
 The full CSV of the scraped data and that of the larger data frame have yet to be uploaded since they are too large for the repo.  Instead, a sample that was created for the machine learning (see modelling section) has been included
 
 ## Background
 
 Air quality is linked to numerous acute and chronic conditions and according to the World Health Organisation accounts for approximately 7 million preventable deaths each year, with around 89% of these occurring in low- and middle-income countries.  The primary air pollutants are all linked to human activity and an ever increasing global population is only likely to reduce air quality.
 While the links between air pollutants and the effects on health are well documented and accepted, these are mostly due to diagnoses after the fact.  Similarly, health services work on treatment and cure after the damage has been done.  Is there a way of detecting or predicting health concerns before they become a chronic or life affecting illness?
-Parkrun organise 5km runs on a weekly basis across more than 700 different locations throughout the UK.  It’s entirely free and open to all demographics aged 10+.  This can be used as a metric for cardiovascular health, with a lower 5km time indicating a better level of health.
+Parkrun organises 5km runs on a weekly basis across more than 700 different locations throughout the UK.  It’s entirely free and open to all demographics aged 10+.  This can be used as a metric for cardiovascular health, with a lower 5km time indicating a better level of health.
 
 ## Goals of the project
 
@@ -37,7 +37,8 @@ Latitude and Longitude of the parkrun location using Nominatim
 
 ## EDA
 
-Parkruns - age and gender distrubtions
+### Parkruns - age and gender distributions
+
 EDA showed that the majority of the observations were for men, with almost 60 % of the runners being male and on average male runners recording faster times than female runners.  Since the mean time for male runners was 27.2 minutes and 32.8 for female runners, it suggests that gender may have an effect on running time.
 
 ![alt text](https://github.com/jyirrell/capstone/blob/main/gender_dist.png)
@@ -48,8 +49,9 @@ The spread of ages ranged from 10 years old to runners in their 90s so the age r
 
 ![alt text](https://github.com/jyirrell/capstone/blob/main/time_dist_age.png)
 
-## Air pollutants
-The air pollutant data showed some interesting trends.  As expected, higher levels of air pollutant were measured around larger cities and higher density residential areas.  For example, the highest levels of particulate matter (shown in the heatmap below) were from Greater London, followed by Manchester and Merseyside, with lower levels around the coasts and into North West Scotland.  However, when compared with the fastest and slowest parkrun locations, there was little correlation between these variables.
+### Air pollutants
+
+The air pollutant data showed some interesting trends.  As expected, higher levels of air pollutants were measured around larger cities and higher density residential areas.  For example, the highest levels of particulate matter (shown in the heatmap below) were from Greater London, followed by Manchester and Merseyside, with lower levels around the coasts and into North West Scotland.  However, when compared with the fastest and slowest parkrun locations, there was little correlation between these variables.
 
 ![alt text](https://github.com/jyirrell/capstone/blob/main/pm_heatmap.png)
 
@@ -58,7 +60,7 @@ When looking at the variation for each pollutant across the year (measured by ta
 ![alt text](https://github.com/jyirrell/capstone/blob/main/pollutant_annual.png)
 
 
-## Relationships
+### Relationships
 
 The final stage of the EDA was to look for any correlation between the variables in the dataset.  The below heatmap shows the Pearson correlation for all of the variables and suggests that many of the pollutants may have collinearity - particulate matter of 2.5 um and 10um have a strong collinearity as do silicon dioxide and nitrogen dioxide.
 However, all seem to have a Pearson correlation coefficient of 0 with time.  Indeed, the only variables that have any significant correlation with time are is_male (gender) and med_age.
@@ -69,11 +71,11 @@ However, all seem to have a Pearson correlation coefficient of 0 with time.  Ind
 ## Modelling
 
 Due to the size of the original dataframe, a sample of 1% (approx 43,000 observations) was created for the modelling stage.  The data was initially modelled on a training set from the sample using 3 different models:
-Linear Regressor
+Linear Regression
 Decision Tree Regressor
 Random Forest Regressor
 
-While there were other models that could have been utilised, these 3 were prioritised because the initial goal was to use the models to understand or explain the relationship between the air quality and running times.  This information can be gained by looking at the coefficients from  Linear Regressor models and the feature importances of the Decision Tree and Random Forest regressors, as shown below.
+While there were other models that could have been utilised, these 3 were prioritised because the initial goal was to use the models to understand or explain the relationship between the air quality and running times.  This information can be gained by looking at the coefficients from  Linear Regression models and the feature importances of the Decision Tree and Random Forest regressors, as shown below.
 
 ![alt text](https://github.com/jyirrell/capstone/blob/main/linreg_coeffs-2.png)
 
@@ -82,7 +84,7 @@ While there were other models that could have been utilised, these 3 were priori
 
 
 Initially, R^2 training scores on both Random Forest and Decision Tree models were very high (over 0.8), however the R^2 scores on the test data were significantly lower (in some cases negative!), as were the cross validated scores.  This suggested that both models were heavily overfit on the training data and deploying these models on unseen data (such as the test data) would result in predictions that were a long way off the actual values.  As such, these models were then tuned with GridSearchCV ( while Linear Regressor was regularised and tuned with ElasticNetCV), to find the parameters that reduced overfitting and gave the best score on the test data.
-However this also resulted in the effect of the air pollution on the predictions being completely removed.  The coefficients for each air pollutant in the LinearRegression model were turned down to 0 by ElasticNet regularisation and the GridSearchCV optimised DecisonTree and RandomForest models both had 0 for feature importance in all air pollutants
+However this also resulted in the effect of the air pollution on the predictions being completely removed.  The coefficients for each air pollutant in the Linear Regression model were turned down to 0 by ElasticNet regularisation and the GridSearchCV optimised Decison Tree and Random Forest models both had 0 for feature importance in all air pollutants
 
 
 ## Conclusions
@@ -102,7 +104,7 @@ Whilst I had scraped websites before, it was never to this scale.  The project t
 
 ## Future work
 Does increased air pollution actually increase observed running speed?
-(because worse air pollution means that those who feel the affect of it are less likely to run)
+(because worse air pollution means that those who feel the effect of it are less likely to run)
 Analysing only runs by the more regular runners
 Importing weather data to merge with air quality
 Looking at how air pollution affects total attendance and demographic
@@ -113,7 +115,7 @@ Looking at how air pollution affects total attendance and demographic
 - Pandas
 - NumPy
 - Selenium
-- BeautifuSoup
+- BeautifulSoup
 - Geopandas
 - Geopy
 - SciKit Learn
