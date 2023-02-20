@@ -40,8 +40,7 @@ Latitude and Longitude of the parkrun location using Nominatim
 Parkruns - age and gender distrubtions
 EDA showed that the majority of the observations were for men, with almost 60 % of the runners being male and on average male runners recording faster times than female runners.  Since the mean time for male runners was 27.2 minutes and 32.8 for female runners, it suggests that gender may have an effect on running time.
 
-
-
+![alt text](https://github.com/jyirrell/capstone/blob/main/gender_dist.png)
 
 The spread of ages ranged from 10 years old to runners in their 90s so the age range of the dataset is quite considerable.  Indeed, there were over 280 runs completed by 20 different people, while almost 24,000 10 year olds took part.  Age seemed to have a bearing on running time, with 16-20 years olds having the best average running times and an obvious pattern of the average time increasing with age.  The exception to this being the age ranges that included 10-14 years, which were slower than the other teenagers.  This is hardly surprising as their bodies are still developing in strength, fitness and even height (giving a greater stride length and running efficiency).
 
