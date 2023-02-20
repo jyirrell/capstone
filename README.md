@@ -51,7 +51,7 @@ The air pollutant data showed some interesting trends.  As expected, higher leve
 
 When looking at the variation for each pollutant across the year (measured by taking the mean value for the entire UK), it’s possible to see quite drastic changes in levels across different seasons.  For example, Carbon Monoxide, Nitrogen Dioxide and Ammonia all show annual lows around July.  While the highest concentrations for Carbon Monoxide, Sulphur Dioxide and Nitrogen Dioxide all occur at the beginning of the year - around the same time that the lowest measurement of Ozone occurs.
 
-[!alt text](https://github.com/jyirrell/capstone/blob/main/pollutant_annual.png)
+![alt text](https://github.com/jyirrell/capstone/blob/main/pollutant_annual.png)
 
 
 ## Relationships
@@ -59,7 +59,7 @@ When looking at the variation for each pollutant across the year (measured by ta
 The final stage of the EDA was to look for any correlation between the variables in the dataset.  The below heatmap shows the Pearson correlation for all of the variables and suggests that many of the pollutants may have collinearity - particulate matter of 2.5 um and 10um have a strong collinearity as do silicon dioxide and nitrogen dioxide.
 However, all seem to have a Pearson correlation coefficient of 0 with time.  Indeed, the only variables that have any significant correlation with time are is_male (gender) and med_age.
 
-[!alt text](https://github.com/jyirrell/capstone/blob/main/correlation_heatmap.png)
+![alt text](https://github.com/jyirrell/capstone/blob/main/correlation_heatmap.png)
 
 
 ## Modelling
@@ -71,7 +71,7 @@ Random Forest Regressor
 
 While there were other models that could have been utilised, these 3 were prioritised because the initial goal was to use the models to understand or explain the relationship between the air quality and running times.  This information can be gained by looking at the coefficients from  Linear Regressor models and the feature importances of the Decision Tree and Random Forest regressors, as shown below.
 
-[!alt text](https://github.com/jyirrell/capstone/blob/main/feature_importances.png)
+![alt text](https://github.com/jyirrell/capstone/blob/main/feature_importances.png)
 
 
 
