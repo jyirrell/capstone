@@ -1,5 +1,5 @@
 # Capstone Readme - Capstone Project for DSI course with General Assembly
-##Overview
+## Overview
 
 This project was completed as the final and capstone project of my Data Science Immersive course with General Assembly.
 Combining the topics of health and air quality was as a result of personal interests in both the health and environment fields.
