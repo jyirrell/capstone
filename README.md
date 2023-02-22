@@ -52,9 +52,14 @@ The spread of ages ranged from 10 years old to runners in their 90s so the age r
 
 ### Air pollutants
 
-The air pollutant data showed some interesting trends.  As expected, higher levels of air pollutants were measured around larger cities and higher density residential areas.  For example, the highest levels of particulate matter (shown in the heatmap below) were from Greater London, followed by Manchester and Merseyside, with lower levels around the coasts and into North West Scotland.  However, when compared with the fastest and slowest parkrun locations, there was little correlation between these variables.
+The air pollutant data showed some interesting trends.  As expected, higher levels of air pollutants were measured around larger cities and higher density residential areas.  For example, the highest levels of particulate matter (shown in the heatmap below) were from Greater London, followed by Manchester and Merseyside, with lower levels around the coasts and into North West Scotland.
 
 ![alt text](https://github.com/jyirrell/capstone/blob/main/pm_heatmap.png)
+
+However, when compared with the fastest and slowest parkrun locations, there was little correlation between these variables.  This can be seen below, with the fastest parkruns marked with a green icon and the slowest with a red icon:
+
+![alt text](https://github.com/jyirrell/capstone/blob/main/heatmap_eng_wales.png)
+![alt text](https://github.com/jyirrell/capstone/blob/main/heatmap_scot_ire_neng.png)
 
 When looking at the variation for each pollutant across the year (measured by taking the mean value for the entire UK), it’s possible to see quite drastic changes in levels across different seasons.  For example, Carbon Monoxide, Nitrogen Dioxide and Ammonia all show annual lows around July.  While the highest concentrations for Carbon Monoxide, Sulphur Dioxide and Nitrogen Dioxide all occur at the beginning of the year - around the same time that the lowest measurement of Ozone occurs.
 
