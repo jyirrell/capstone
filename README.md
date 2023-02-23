@@ -109,11 +109,10 @@ Whilst I had scraped websites before, it was never to this scale.  The project t
 
 
 ## Future work
-Does increased air pollution actually increase observed running speed?
-(because worse air pollution means that those who feel the effect of it are less likely to run)
-Analysing only runs by the more regular runners
-Importing weather data to merge with air quality
-Looking at how air pollution affects total attendance and demographic
+ - Does increased air pollution actually increase observed running speed? (because worse air pollution means that those who feel the effect of it are less likely to run)
+- Analysing only runs by the more regular runners
+- Importing weather data to merge with air quality
+- Looking at how air pollution affects total attendance and demographic
 
 
 ## Libraries used
